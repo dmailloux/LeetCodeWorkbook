@@ -8,6 +8,7 @@
    1. [Stacks](#using-a-stack)
    2. [The Red Herring](#the-red-herring)
    3. [Max number of open parentheses](#max-number-of-open-parentheses)
+   4. [Algorithmic Complexity](#algorithmic-complexity)
 2. [Solution Code](#solution-code)
 3. [In Conclusion](#in-conclusion)
 
@@ -52,6 +53,10 @@ Turns out, this isn't a stack problem at all, it's a _trick problem_. So much at
 ### Max Number of Open Parentheses
 
 Because we can always assume we are given a **VPS**, and we only care about the **_maximum_ nesting depth**, all we need to do is keep track of our current, and maximum nesting depth as we iterate over the string. We increase our current nesting depth every time we open a bracket, and decrease it every time we see a closing bracket. It's also important that when we encounter an open bracket, we set our maximum nesting depth to whichever is larger between the current nesting depth and the existing maximum nesting depth.
+
+### Algorithmic Complexity
+
+We can do this in one pass over the string so this solution has a time complexity of O(n). Since we only need to store a few variables and the size of the input has no bearing on how much we need to store, this solution has a space complexity of O(1). Had we used a stack, we could still do this in O(n) time, but we would need O(n) space since we might need to store as many brackets as there are characters in the string.
 
 ## Solution Code
 
