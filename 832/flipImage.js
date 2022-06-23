@@ -9,9 +9,6 @@ function flipAndInvertImage(image) {
     reverseArrayOfBitsInPlace(image[i]);
   }
 
-  for (let i = 0; i < imageLength; i++) {
-    invertArrayOfBitsInPlace(image[i]);
-  }
   return image;
 }
 
@@ -26,17 +23,7 @@ function reverseArrayOfBitsInPlace(bitArray) {
   }
 
   for (let i = bitArrayLength - 1; i >= 0; i--) {
-    bitArray[i] = newArr[i];
-  }
-}
-
-/**
- * @param {Array<0 | 1>} bitArray
- */
-function invertArrayOfBitsInPlace(bitArray) {
-  const bitArrayLength = bitArray.length;
-  for (let i = 0; i < bitArrayLength; i++) {
-    bitArray[i] = getBitInverse(bitArray[i]);
+    bitArray[i] = getBitInverse(newArr[i]);
   }
 }
 
